@@ -11,7 +11,7 @@ model = joblib.load("stacking.pkl")  # hoặc linear.pkl, mlp.pkl...
 st.set_page_config(page_title="Đánh giá chất lượng rượu vang", layout="centered")
 st.title("🍷 Đánh giá chất lượng rượu vang")
 
-st.markdown("### Nhập các thông số hóa học (giá trị từ 0 đến 100):")
+st.markdown("### Nhập các thông số hóa học (giá trị từ 0 đến 50):")
 
 # Tạo các input cho người dùng
 features = []
@@ -22,7 +22,7 @@ feature_names = [
 ]
 
 for name in feature_names:
-    value = st.slider(name, 0.0, 100.0, 50)
+    value = st.slider(name, 0.0, 50.0, 25.0)
     features.append(value)
 
 # Dự đoán khi người dùng nhấn nút
